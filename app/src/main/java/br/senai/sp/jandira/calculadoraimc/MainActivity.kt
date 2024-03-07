@@ -22,6 +22,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -75,7 +77,8 @@ fun Page() {
 
 
             Card (shape = CircleShape,
-                modifier = Modifier.size(60.dp)){
+                modifier = Modifier.size(60.dp)
+            ){
                 Image(
                     painter = painterResource(
                         id = R.drawable.icon),
@@ -116,12 +119,41 @@ fun Page() {
                     )
                 }
 
-                Text(text = "Seu peso")
-                TextField(value = "", onValueChange = {}
+                Text(text = "Seu peso",
+                        color = Color(0xFFEB1450),)
+                OutlinedTextField(
+                    value = "",
+                    onValueChange = {},
+                    label = {
+                        Text(text = "Seu Peso em Kg",
+                            color = Color.Gray
+                        )
+                    },
+                    colors = OutlinedTextFieldDefaults.colors(
+                        unfocusedBorderColor = Color(0xFFEB1450),
+                        focusedBorderColor = Color(0xFFEB1450),
+                    ),
+                    modifier = Modifier
+                        .padding(bottom =  10.dp)
                 )
 
-                Text(text = "Seu peso")
-                TextField(value = "", onValueChange = {})
+                Text(text = "Seu peso",
+                    color = Color(0xFFEB1450),)
+                OutlinedTextField(
+                    value = "",
+                    onValueChange = {},
+                    label = {
+                        Text(text = "Seu Peso em Kg",
+                            color = Color.Gray
+                        )
+                    },
+                    colors = OutlinedTextFieldDefaults.colors(
+                        unfocusedBorderColor = Color(0xFFEB1450),
+                        focusedBorderColor = Color(0xFFEB1450)
+                    ),
+                    modifier = Modifier
+                        .padding(bottom =  10.dp)
+                )
 
                 Button(onClick = { /*TODO*/ },
                     modifier = Modifier
@@ -133,6 +165,18 @@ fun Page() {
                 }
             }
 
+        }
+
+        Row (
+            modifier = Modifier
+                .width(300.dp),
+            horizontalArrangement = Arrangement.Center
+        ){
+            Column {
+                Text(text = "Resultado")
+                Text(text = "peso ideal")
+            }
+            Text(text = "21.3")
         }
 
 
