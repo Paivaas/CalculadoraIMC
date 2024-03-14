@@ -97,7 +97,7 @@ fun Page() {
         Card (modifier = Modifier
             .width(300.dp)
             .height(400.dp)
-            .offset(y = -30.dp)
+            .offset(y = -30.dp)git add .
         ){
 
             Column (
@@ -113,7 +113,7 @@ fun Page() {
                     horizontalArrangement = Arrangement.SpaceAround
                 ){
                     Text(text = "Seus Dados",
-                        fontSize = 24.sp,
+                        fontSize = 28.sp,
                         color = Color(0xFFEB1450),
                         fontWeight = FontWeight.Bold
                     )
@@ -129,9 +129,12 @@ fun Page() {
                             color = Color.Gray
                         )
                     },
+                    shape = RoundedCornerShape(12.dp),
                     colors = OutlinedTextFieldDefaults.colors(
                         unfocusedBorderColor = Color(0xFFEB1450),
                         focusedBorderColor = Color(0xFFEB1450),
+                        focusedContainerColor = Color.White,
+                        unfocusedContainerColor = Color.White
                     ),
                     modifier = Modifier
                         .padding(bottom =  10.dp)
@@ -149,19 +152,24 @@ fun Page() {
                     },
                     colors = OutlinedTextFieldDefaults.colors(
                         unfocusedBorderColor = Color(0xFFEB1450),
-                        focusedBorderColor = Color(0xFFEB1450)
+                        focusedBorderColor = Color(0xFFEB1450),
+                        focusedContainerColor = Color.White,
+                        unfocusedContainerColor = Color.White
                     ),
+                    shape = RoundedCornerShape(12.dp),
                     modifier = Modifier
                         .padding(bottom =  10.dp)
                 )
 
                 Button(onClick = { /*TODO*/ },
                     modifier = Modifier
-                        .fillMaxWidth(),
+                        .fillMaxWidth()
+                        .height(50.dp),
                     shape = RoundedCornerShape(12.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = Color((0xFFEB1450)))
                 ) {
-                    Text(text = "CALCULAR")
+                    Text(text = "CALCULAR",
+                        fontWeight = FontWeight.Bold)
                 }
             }
 
@@ -169,14 +177,30 @@ fun Page() {
 
         Row (
             modifier = Modifier
-                .width(300.dp),
-            horizontalArrangement = Arrangement.Center
+                .width(300.dp)
+                .height(100.dp)
+                .background(color = Color(0xff2C9660),
+                    shape = RoundedCornerShape(16.dp)
+                ),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceEvenly,
+
         ){
-            Column {
-                Text(text = "Resultado")
-                Text(text = "peso ideal")
+            Column (
+                horizontalAlignment = Alignment.CenterHorizontally
+            ){
+                Text(text = "Resultado",
+                    color = Color.White)
+                Text(text = "Peso ideal",
+                    color = Color.White,
+                    fontSize = 24.sp,
+
+                )
             }
-            Text(text = "21.3")
+            Text(text = "21.3",
+                fontSize = 36.sp,
+                color = Color.White,
+                fontWeight = FontWeight.Bold)
         }
 
 
