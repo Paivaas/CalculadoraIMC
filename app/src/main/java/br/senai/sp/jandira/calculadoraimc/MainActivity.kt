@@ -97,7 +97,7 @@ fun Page() {
         Card (modifier = Modifier
             .width(300.dp)
             .height(400.dp)
-            .offset(y = -30.dp)git add .
+            .offset(y = -30.dp)
         ){
 
             Column (
