@@ -21,6 +21,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
@@ -97,7 +98,8 @@ fun Page() {
         Card (modifier = Modifier
             .width(300.dp)
             .height(400.dp)
-            .offset(y = -30.dp)
+            .offset(y = -30.dp),
+            colors = CardDefaults.cardColors(Color(0xffF7F3F2))
         ){
 
             Column (
@@ -179,7 +181,8 @@ fun Page() {
             modifier = Modifier
                 .width(300.dp)
                 .height(100.dp)
-                .background(color = Color(0xff2C9660),
+                .background(
+                    color = Color(0xff2C9660),
                     shape = RoundedCornerShape(16.dp)
                 ),
             verticalAlignment = Alignment.CenterVertically,
